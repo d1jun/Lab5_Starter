@@ -70,7 +70,7 @@ function init() {
 
   const playAudio = document.querySelector("button");
   let hornAudio = document.querySelector("audio");
-  
+  const jsConfetti = new JSConfetti();
   // example of eventListener + internal function
   // plays sound on button click + handles confetti case
   playAudio.addEventListener('click', ()=>{
@@ -79,7 +79,6 @@ function init() {
     let hornSelect = document.getElementById('horn-select');
     let selectedHorn = hornSelect.options[hornSelect.selectedIndex].value;
     if(volumeVal != 0 && selectedHorn == 'party-horn'){
-      const jsConfetti = new JSConfetti();
       jsConfetti.addConfetti();
     }
     hornAudio.play();
